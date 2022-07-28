@@ -55,5 +55,26 @@ let currentWeather = {
 
 }
 
-
+// Forecast API call
+let weatherForecast = {
+        getForecast: function(city) {
+            fetch(
+                'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&appid=' + apiKey
+            )
+        .then(response => response.json())
+                .then((data) => 
+            console.log(data) &
+            this.displayForecast(data)
+        );
+    },
+    displayForecast: function(data) {
+        let { icon } = data.list[0];
+        let { temp, humidity } = data.list[0];
+        let { speed } = data.wind;
+        console.log(icon, temp, humidity, speed)
+        // for (let i = 0; i < 5; i++) {
+        //     const element = array[i];
+        // }
+    }
+}
 
