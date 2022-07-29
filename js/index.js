@@ -13,8 +13,8 @@ searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const currentCity = citySearch.value;
     console.log(currentCity);
-    
-        currentWeather.getWeather(currentCity) & weatherForecast.getForecast(currentCity)
+
+    currentWeather.getWeather(currentCity) & weatherForecast.getForecast(currentCity)
 })
 
 //Current Weather
