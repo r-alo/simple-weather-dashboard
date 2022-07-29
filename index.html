@@ -19,17 +19,17 @@
     <!-- Search input layout -->
         <div class="d-flex col ms-4" >
                 <!-- City consult form -->
-                <div class="col-3 align-self-center">
+                <div class="col-3 align-self-center search">
                 <form class="row gap-1">
                     <h2 class="form-label">Search for a city</h2>
                     <input type="search" class="rounded-pill form-control" id="city-search" name="city" placeholder="Type a city...">
-                    <button class="btn border-primary rounded-pill" type="submit">Search</button>
+                    <button class="btn border-primary rounded-pill" id="search-btn" type="submit">Search</button>
                 </form>
                 <hr>
                 <div id="stored-cities" class="d-grid gap-2 col-6 mx-auto">
                     <!-- input of consulted stories -->
-                    <!-- <button class="btn btn-secondary">hello</button>
-                    <button class="btn btn-secondary">world</button> -->
+                    <button class="btn btn-secondary">hello</button>
+                    <button class="btn btn-secondary">world</button>
                 </div>
                 </div>
             
@@ -38,11 +38,11 @@
 
         <div class="container d-flex flex-column flex-wrap ms-3">
             <div id="input-city" class="row col-10 border rounded mt-2  align-self-center">
-                <div><h3 id="main-city">City</h3><h4 class="date">Date</h4><img src="" alt="" id="main-icon"/></div>
+                <div><h4 id="main-date">Date</h4><h3 id="main-city">City</h3><img src="" alt="" id="main-icon"/></div>
                 <p id="main-temp" >Temperature: </p>
                 <p id="main-wind" >Wind: </p>
                 <p id="main-humid" >Humidity: </p>
-                <p id="main-uvi" >UV Index: </p>
+                <p>UV Index: <span id="main-uvi" ></span></p>
             </div>
 
             <!-- Forecast container -->
@@ -50,35 +50,35 @@
                 <h2>5 - day forecast: </h2>
                 <div id="1" class="fore-item border rounded col card">
                     <h4 id="date-1">Date</h4>
-                    <img src="" alt="" id="icon-1"/>
+                    <img src="" alt="" id="icon-1" style="max-height: 50px; max-width: 50px;"/>
                     <p id="temp-1">Temperature: </p>
                     <p id="wind-1">Wind: </p>
                     <p id="humid-1">Humidity: </p>
                 </div>
                 <div id="2" class="fore-item border rounded col card">
                     <h4 id="date-2">Date</h4>
-                    <img src="" alt="" id="icon-2" />
+                    <img src="" alt="" id="icon-2" style="max-height: 50px; max-width: 50px;" />
                     <p id="temp-2">Temperature:</p>
                     <p id="wind-2">Wind:</p>
                     <p id="humid-2">Humidity:</p>
                 </div>
                 <div id="3" class="fore-item border rounded col card">
                     <h4 id="date-3">Date</h4>
-                    <img src="" alt="" id="icon-3" />
+                    <img src="" alt="" id="icon-3" style="max-height: 50px; max-width: 50px;" />
                     <p id="temp-3">Temperature:</p>
                     <p id="wind-3">Wind:</p>
                     <p id="humid-3">Humidity:</p>
                 </div>
                 <div id="4" class="fore-item border rounded col card">
                     <h4 id="date-4">Date</h4>
-                    <img src="" alt="" id="icon-4" />
+                    <img src="" alt="" id="icon-4" style="max-height: 50px; max-width: 50px;" />
                     <p id="temp-4">Temperature:</p>
                     <p id="wind-4">Wind:</p>
                     <p id="humid-4">Humidity:</p>
                 </div>
                 <div id="5" class="fore-item border rounded col card">
                     <h4 id="date-5">Date</h4>
-                    <img src="" alt="" id="icon-5" />
+                    <img src="" alt="" id="icon-5" style="max-height: 50px; max-width: 50px;" />
                     <p id="temp-5">Temperature:</p>
                     <p id="wind-5">Wind:</p>
                     <p id="humid-5">Humidity:</p>
@@ -92,5 +92,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
     crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </body>
 </html>
