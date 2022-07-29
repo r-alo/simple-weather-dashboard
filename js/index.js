@@ -12,10 +12,24 @@ let searchBtn = document.querySelector('#search-btn');
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const currentCity = citySearch.value;
-    console.log(currentCity);
-
-    currentWeather.getWeather(currentCity) & weatherForecast.getForecast(currentCity)
+    // console.log(currentCity);
+    currentWeather.getWeather(currentCity) & weatherForecast.getForecast(currentCity);
+    
+    saveSearch(currentCity);
+    citySearch.value = '';
 })
+
+const saveSearch = (city) => {
+    let boton = `<button class="btn btn-secondary">${city}</button>`;
+    $('#stored-cities').append(boton);
+    const newBtn = $('#stored-cities button').last().click((e) => {
+
+        e.preventDefault();
+        currentWeather.getWeather(city) & weatherForecast.getForecast(city);
+    })
+    
+
+}
 
 //Current Weather
     //Display current date
@@ -29,7 +43,7 @@ let currentWeather = {
         )
         .then(response => response.json())
         .then(data => 
-            console.log(data) &
+            // console.log(data) &
             this.displayCurrent(data) 
         );
     },
@@ -41,7 +55,7 @@ let currentWeather = {
         const {temp, humidity} = data.main;
         const {speed} = data.wind ;
         const {lat, lon} = data.coord;
-        console.log(name, icon, temp, speed, humidity);
+        // console.log(name, icon, temp, speed, humidity);
         //Display data in respective HTML tags
         document.querySelector('#main-city').innerText = name,
         document.querySelector('#main-icon').src = `http://openweathermap.org/img/wn/${icon}.png`,
@@ -58,13 +72,13 @@ let currentWeather = {
         )
             .then(response => response.json())
             .then(data =>
-                console.log(data) &
+                // console.log(data) &
                 this.displayUV(data)
             );
     },
     displayUV: function (data) {
         const { uvi } = data.current;
-        console.log(uvi);
+        // console.log(uvi);
         document.querySelector('#main-uvi').innerText = uvi;
         //Assign color to UV index
         function uvLevel() {
@@ -109,7 +123,8 @@ let weatherForecast = {
                     return false;
                 })
                 // console.log(data);
-                console.log(selected) & this.displayForecast(selected);
+                // console.log(selected) & 
+                this.displayForecast(selected);
             });
     },
     //Display data on HTML cards
@@ -118,7 +133,7 @@ let weatherForecast = {
             let { icon } = data[i].weather[0];
             let { temp, humidity } = data[i].main;
             let { speed } = data[i].wind;
-            console.log(icon, temp, humidity, speed)
+            // console.log(icon, temp, humidity, speed)
             document.querySelector('#temp-' + (i + 1)).innerText = `Temperature: ${temp}`,
             document.querySelector('#icon-' + (i + 1)).src = `http://openweathermap.org/img/wn/${icon}.png`,
             document.querySelector('#wind-' + (i + 1)).innerText = `Wind: ${speed}KPH`,
