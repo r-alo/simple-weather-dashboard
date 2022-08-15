@@ -112,7 +112,13 @@ let weatherForecast = {
             .then(response => response.json())
             .then((data) => {
                 let todayDate = moment().format('dddd, MMM Do YYYY');
-                let dates = ["2022-07-30", "2022-07-31", "2022-08-01", "2022-08-02", "2022-08-03"];
+                let dates = [
+                    moment().add(1, 'days').format('YYYY-MM-DD'),
+                    moment().add(2, 'days').format('YYYY-MM-DD'),
+                    moment().add(3, 'days').format('YYYY-MM-DD'),
+                    moment().add(4, 'days').format('YYYY-MM-DD'),
+                    moment().add(5, 'days').format('YYYY-MM-DD')
+                ];
                 let selected = []
                 data.list.forEach((list) => {
                     
