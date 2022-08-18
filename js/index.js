@@ -57,7 +57,7 @@ let currentWeather = {
         // console.log(name, icon, temp, speed, humidity);
         //Display data in respective HTML tags
         document.querySelector('#main-city').innerText = name,
-        document.querySelector('#main-icon').src = `http://openweathermap.org/img/wn/${icon}.png`,
+        document.querySelector('#main-icon').src = `https://openweathermap.org/img/wn/${icon}.png`,
         document.querySelector('#main-temp').innerText = `Temperature: ${temp}`,
         document.querySelector('#main-wind').innerText = `Wind: ${speed}KPH`,
         document.querySelector('#main-humid').innerText = `Humidity: ${humidity}%`;
