@@ -1,6 +1,3 @@
-//API key variable
-const apiKey = '2d5cb8ee08306bcd2e221943675f5ba4';
-
 // HTML get Element variables
     //Input search variables
 let storedCities = document.getElementById('stored-cities');
@@ -37,6 +34,8 @@ document.querySelector('#main-date').innerText = todayDate;
     // Current weather API call
 let currentWeather = {
     getWeather: function(city) {
+        //API key variable
+        const apiKey = '2d5cb8ee08306bcd2e221943675f5ba4';
         
         fetch(
             'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiKey
@@ -106,6 +105,9 @@ let currentWeather = {
     //Loop for 5 days forecast
 let weatherForecast = {
     getForecast: function (city) {
+        //API key variable
+        const apiKey = '2d5cb8ee08306bcd2e221943675f5ba4';
+
         fetch(
             'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&appid=' + apiKey
         )
